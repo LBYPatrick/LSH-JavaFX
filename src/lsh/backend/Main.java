@@ -117,14 +117,14 @@ public class Main {
                 current_solution.commands.add("type nul > wifi_config.xml");
 
                 current_solution.commands.add(Utils.getWriteFileCMD
-                (Database.wifiConfig.get(Database.LS_GUEST).content_, "wifi_config.xml"));
+                (Database.wifiConfig.get(Database.PREFERRED_WIFI).content_, "wifi_config.xml"));
 
                 //connect to Specified Wi-Fi
-                current_solution.commands.add("netsh wlan delete profile name=\"" + Database.wifiConfig.get(Database.LS_GUEST).name_ + "\"");
+                current_solution.commands.add("netsh wlan delete profile name=\"" + Database.wifiConfig.get(Database.PREFERRED_WIFI).name_ + "\"");
                 current_solution.commands.add("netsh wlan add profile \".\\wifi_config.xml\"");
                 current_solution.commands.add("del wifi_config.xml");
                 current_solution.commands.add("netsh wlan disconnect");
-                current_solution.commands.add("netsh wlan connect name=\"" + Database.wifiConfig.get(Database.LS_GUEST).name_ + "\"");
+                current_solution.commands.add("netsh wlan connect name=\"" + Database.wifiConfig.get(Database.PREFERRED_WIFI).name_ + "\"");
 
                 //clean up
             }
