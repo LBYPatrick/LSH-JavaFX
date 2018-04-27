@@ -5,9 +5,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ProgressBar?>
-<GridPane fx:controller="lsh.gui.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-    <ChoiceBox fx:id="solution_box" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-    <Button fx:id="execute" GridPane.rowIndex="1" GridPane.columnIndex="1" textAlignment="CENTER" text="FIX" onMouseClicked="#runSolution"/>
-    <ProgressBar fx:id="pBar" GridPane.rowIndex="2"/>
+<?import javafx.scene.image.ImageView?>
+<GridPane fx:controller="lsh.gui.Controller" fx:id="windowPane"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="25">
+    <padding><Insets top="30" bottom="30" left="10" right="10"/></padding>
+
+    <ImageView fx:id="Logo" GridPane.rowIndex = "0" fitWidth="400" fitHeight="135.8"/>
+
+    <!-- Solution Pane -->
+    <GridPane fx:id="solutionPane" GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="CENTER" hgap="15">
+    <ChoiceBox fx:id="solution_box" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="LEFT"/>
+    <Button fx:id="execute" GridPane.rowIndex="0" GridPane.columnIndex="1" textAlignment="CENTER" text="FIX" onMouseClicked="#runSolution" GridPane.halignment="RIGHT"/>
+    </GridPane>
+
+    <ProgressBar fx:id="pBar" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.valignment="BOTTOM" GridPane.halignment="CENTER"/>
 </GridPane>
